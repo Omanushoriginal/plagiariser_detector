@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlagiGuard YT — YouTube Content Plagiarism & AI-Ripoff Detector</title>
+  <meta name="description" content="AI-powered forensic detector for YouTube creators. Scan YouTube video links to uncover plagiarized thumbnails, AI-remixed artwork, stolen scripts, and duplicate video clones.">
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ef4444'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z'/></svg>">
+</head>
+<body>
+  <div class="ambient-bg"></div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="/" class="brand">
+        <div class="brand-icon">
+          <svg fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>PlagiGuard YT</h1>
+          <span>Forensic Copycat Scanner</span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <div class="status-pill">
+          <div class="pulse-dot"></div>
+          <span>DINOv2 & Whisper Active</span>
+        </div>
+        <a href="https://github.com/omanushoriginal/plagiariser_detector" target="_blank" rel="noopener" class="github-btn">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Banner -->
+    <section class="hero">
+      <div class="hero-badge">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+        Multi-Modal YouTube Copyright Forensics
+      </div>
+      <h2>Stop Video Thieves & AI Ripoffs</h2>
+      <p>
+        Paste your YouTube video link. PlagiGuard scans across YouTube to detect duplicate thumbnails, AI-stylized image theft, stolen voiceover scripts, and clone re-uploads.
+      </p>
+    </section>
+
+    <!-- Scanner / Search Card -->
+    <section class="search-card">
+      <!-- Tabs Switcher -->
+      <div class="tabs-container">
+        <button id="tab-scan" class="tab-btn active">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          Scan Whole YouTube for Copies
+        </button>
+        <button id="tab-compare" class="tab-btn">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 3h5v5M4 20L21 3m0 18h-5v-5m5 5-7.5-7.5"/></svg>
+          Direct 1-on-1 Video Comparison
+        </button>
+      </div>
+
+      <!-- Mode 1: Auto YouTube-wide Scan -->
+      <div id="scan-input-group" class="input-group">
+        <div class="input-box">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <input type="text" id="video-url-input" placeholder="Paste your YouTube video URL (e.g. https://www.youtube.com/watch?v=...)">
+        </div>
+        <button id="btn-submit" class="btn-primary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          Analyze Plagiarism
+        </button>
+      </div>
+
+      <!-- Mode 2: 1-on-1 Compare Inputs -->
+      <div id="compare-input-group" class="compare-grid" style="display: none;">
+        <div class="input-box">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+          <input type="text" id="compare-url-1" placeholder="Original YouTube Video URL (Yours)">
+        </div>
+        <div class="input-box">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+          <input type="text" id="compare-url-2" placeholder="Suspect YouTube Video URL (Competitor)">
+        </div>
+      </div>
+
+      <!-- Presets & Advanced Options -->
+      <div class="options-bar">
+        <div class="presets">
+          <span>Quick Demos:</span>
+          <button class="preset-chip" data-preset="tech">Tech Tutorial</button>
+          <button class="preset-chip" data-preset="edu">Educational Guide</button>
+          <button class="preset-chip" data-preset="sample" style="color: #60a5fa; border-color: rgba(59,130,246,0.4)">⚡ Instant Sample Report</button>
+        </div>
+
+        <div class="advanced-options">
+          <label class="toggle-label" title="Enable Meta DINOv2 self-supervised vision model for detecting AI-generated or restyled thumbnails">
+            <input type="checkbox" id="toggle-dinov2" checked>
+            <span>DINOv2 AI-Styling Match</span>
+          </label>
+          <label class="toggle-label">
+            <span>Candidates:</span>
+            <select id="candidate-count" style="background:var(--bg-card); color:white; border:1px solid var(--border-color); border-radius:4px; padding:2px 6px;">
+              <option value="4">4</option>
+              <option value="6" selected>6</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scanning Progress Indicator -->
+    <section id="progress-section" class="progress-card" style="display: none;">
+      <div class="spinner"></div>
+      <h3 id="progress-text" style="color:white; font-size:1.15rem; margin-bottom: 0.5rem;">
+        Searching YouTube for matching videos...
+      </h3>
+      <p style="color:var(--text-muted); font-size:0.9rem;">
+        Extracting thumbnails, calculating perceptual hashes, and evaluating spoken transcripts.
+      </p>
+
+      <div class="progress-steps">
+        <div id="step-1" class="step-item active">1. Resolve Metadata</div>
+        <div id="step-2" class="step-item">2. Search YouTube</div>
+        <div id="step-3" class="step-item">3. Vision & DINOv2</div>
+        <div id="step-4" class="step-item">4. Transcripts & Report</div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results-section" class="results-section" style="display: none;">
+      <!-- Original Video Card -->
+      <div id="source-hero-card" class="source-hero-card">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <!-- Threat Matrix Banner -->
+      <div class="threat-banner">
+        <div class="threat-left">
+          <div id="threat-score-ring" class="threat-score-ring">
+            <span id="threat-score-val">88%</span>
+            <span>Risk</span>
+          </div>
+          <div class="threat-details">
+            <h3 id="threat-title">Plagiarism Assessment</h3>
+            <p id="threat-desc">Summary of forensic findings across YouTube candidates.</p>
+          </div>
+        </div>
+        <div class="action-buttons">
+          <button id="btn-open-dmca" class="btn-secondary">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+            Draft DMCA Take-Down
+          </button>
+          <button id="btn-download-report" class="btn-secondary">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            Export JSON
+          </button>
+        </div>
+      </div>
+
+      <!-- Suspect Matches Container -->
+      <div id="matches-container" class="matches-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- DMCA Modal -->
+  <div id="dmca-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="color:white; font-size:1.15rem;">Formal Copyright Infringement Notice (DMCA)</h3>
+        <button id="btn-close-modal" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:1.5rem;">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom: 0.75rem;">
+          This forensic report contains exact thumbnail hashes, DINOv2 metrics, transcript similarity, and upload chronologies ready for submission to YouTube Studio's Copyright Match Tool or formal DMCA notice.
+        </p>
+        <textarea id="dmca-textarea" readonly></textarea>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-copy-dmca" class="btn-primary">Copy Notice</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-author">
+        <span>Created with ❤️ by</span>
+        <a href="https://github.com/omanushoriginal" target="_blank" rel="noopener">omanushoriginal</a>
+        <span>•</span>
+        <a href="mailto:drisham4@gmail.com">drisham4@gmail.com</a>
+      </div>
+      <div>
+        <span>PlagiGuard YT &copy; 2026 • Open Source Forensic Tool for Video Creators</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
